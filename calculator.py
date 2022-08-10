@@ -14,8 +14,8 @@ while True:
     # quit if first token is q
     if tokens[0] == "q":
         break
-    # if first token isn't q, check operator
-    else:
+    # if first token isn't q, check operator validity
+    elif tokens[0] in ['+', '-', '*', '/', 'square', 'cube', 'pow', 'mod']:
         # if operator is +, print sum of nums
         if tokens[0] == "+":
             print(add(float(tokens[1]), float(tokens[2])))
@@ -40,6 +40,10 @@ while True:
         # if operator is mod, print num1 % num2
         elif tokens[0] == "mod":
             print(mod(float(tokens[1]), float(tokens[2])))
+
+    # if operator not valid, print error
+    else:
+        print("ERROR: That's not a valid operator")
         
             
     
